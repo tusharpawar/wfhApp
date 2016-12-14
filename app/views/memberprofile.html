@@ -1,0 +1,125 @@
+<section class="content" ng-controller="MemberProfileController as memberProfileVm">
+
+      <div class="row">
+        <div class="col-md-3">
+
+          <!-- Profile Image -->
+          <div class="box box-primary">
+            <div class="box-body box-profile">
+              <img class="profile-user-img img-responsive img-circle" src="images/user2-160x160.jpg" alt="User profile picture">
+
+              <h3 class="profile-username text-center">{{memberProfileVm.teamMember.user}}</h3>
+
+              <p class="text-muted text-center">{{memberProfileVm.teamMember.designation}}</p>
+
+              <ul class="list-group list-group-unbordered">
+                <li class="list-group-item">
+                  <b>Team</b> <a class="pull-right">{{memberProfileVm.teamMember.teamName}}</a>
+                </li>
+                <li class="list-group-item">
+                  <b>Grade</b> <a class="pull-right">{{memberProfileVm.teamMember.grade}}</a>
+                </li>
+                <li class="list-group-item">
+                  <b>Phone</b> <a class="pull-right">{{memberProfileVm.teamMember.phone}}</a>
+                </li>
+              </ul>
+
+              <a href="" class="btn btn-primary btn-block"><b>Follow</b></a>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+
+          <!-- About Me Box -->
+          <div class="box box-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">About Me</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <strong><i class="fa fa-book margin-r-5"></i> Email</strong>
+
+              <p class="text-muted">
+                {{memberProfileVm.teamMember.email}}
+              </p>
+
+              <hr>
+
+              <strong><i class="fa fa-map-marker margin-r-5"></i> Location</strong>
+
+              <p class="text-muted">Pune</p>
+
+              <hr>
+
+              <strong><i class="fa fa-pencil margin-r-5"></i> Skills</strong>
+
+              <p>
+                <span class="label label-danger">UI Design</span>
+                <span class="label label-success">Coding</span>
+                <span class="label label-info">Javascript</span>
+                <span class="label label-warning">PHP</span>
+                <span class="label label-primary">Node.js</span>
+              </p>
+
+              <hr>
+
+              <strong><i class="fa fa-file-text-o margin-r-5"></i> Notes</strong>
+
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fermentum enim neque.</p>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+        </div>
+        <!-- /.col -->
+        <div class="col-md-9">
+          <div class="nav-tabs-custom">
+            <ul class="nav nav-tabs">
+              <li class="active"><a href="#timeline" data-toggle="tab">Timeline</a></li>
+            </ul>
+            <div class="tab-content">
+              
+              <div class="active tab-pane" id="timeline">
+                <!-- The timeline -->
+                <ul class="timeline timeline-inverse" ng-repeat="work in memberProfileVm.teamMember.wfh | reverse">
+                  <!--div ng-repeat="work in teamMember.wfh"-->
+                      <li class="time-label">
+                            <span class="bg-red">
+                              {{work.onDate | date}}
+                            </span>
+                      </li>
+                      <li>
+                        <i class="fa fa-user bg-aqua"></i>
+                        <div class="timeline-item">
+                          <h3 class="timeline-header no-border"><a href="#">{{memberProfileVm.teamMember.user}}</a> 's Tasks for the Day
+                          </h3>
+                          <div class="timeline-body">
+                            {{work.tasks}}
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <i class="fa fa-comments bg-yellow"></i>
+                        <div class="timeline-item">
+                          <h3 class="timeline-header"><a href="#">{{memberProfileVm.teamMember.user}}</a> commented on his/her post.</h3>
+                          <div class="timeline-body">
+                            {{work.comments}}
+                          </div>
+                        </div>
+                      </li>
+                    <!--/div-->
+                </ul>
+                <!--- End of Timeline -->
+              </div>
+              <!-- /.tab-pane -->
+            </div>
+            <!-- /.tab-content -->
+          </div>
+          <!-- /.nav-tabs-custom -->
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+
+    </section>
+    <!-- /.content -->

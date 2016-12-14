@@ -1,0 +1,47 @@
+<section class="content" ng-controller="TeamController as teamVm">
+	<section class="content-header">
+	      <h1>
+	        Team
+	      </h1>
+	 </section>
+	 <br>
+	<div class="row">
+		<div class="col-md-4" ng-repeat="teamMember in teamVm.team">
+			<div class="box box-widget widget-user">
+	            <!-- Add the bg color to the header using any of the bg-* classes -->
+	            <div class="widget-user-header bg-aqua-active">
+	              	<h3 class="widget-user-username">{{teamMember.user}}</h3>
+	              <h5 class="widget-user-desc">{{teamMember.designation}}</h5>
+	            </div>
+	            <div class="widget-user-image">
+	            	<!--a ui-sref="app.teammemberprofile({id: teamMember.id})"-->
+	            	<a ui-sref="app.memberprofile({id: teamMember.id})">
+	            	<img class="img-circle" src="images/user2-160x160.jpg" alt="User Avatar">
+	            	</a>
+	            	<!--/a-->
+	            </div>
+	            <div class="box-footer">
+	              <div class="row">
+	                <div class="col-sm-6 border-right">
+	                  <div class="description-block">
+	                    <h5 class="description-header">{{teamMember.email}}</h5>
+	                    <span class="description-text">Email</span>
+	                  </div>
+	                  <!-- /.description-block -->
+	                </div>
+	                <!-- /.col -->
+	                <div class="col-sm-6">
+	                  <div class="description-block">
+	                    <h5 class="description-header">{{teamMember.phone}}</h5>
+	                    <span class="description-text">Phone</span>
+	                  </div>
+	                  <!-- /.description-block -->
+	                </div>
+	                <!-- /.col -->
+	              </div>
+	              <!-- /.row -->
+	            </div>
+	          </div>
+		</div>
+	</div>
+</section>

@@ -1,0 +1,114 @@
+
+
+<div class="container" ng-controller="DashboardController as dashboardVm">
+
+    <section class="content-header">
+      <h1>
+        Dashboard
+      </h1>
+    </section>
+    <div class="row row-content">
+      <br><br>
+        <!-- Dashboard rows-->
+      <div class="row">
+          <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+            <div class="small-box bg-aqua">
+              <div class="inner">
+                <h3>{{dashboardVm.report.todayWfh}}</h3>
+
+                <p>Today's WFH</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-bag"></i>
+              </div>
+              <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+        <!-- ./col -->
+          <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+            <div class="small-box bg-green">
+              <div class="inner">
+                <h3>{{dashboardVm.report.thisMonth}}</h3>
+
+                <p>This Month</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-stats-bars"></i>
+              </div>
+              <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+        <!-- ./col -->
+          <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+            <div class="small-box bg-yellow">
+              <div class="inner">
+                <h3>{{dashboardVm.report.teamMembers}}</h3>
+
+                <p>Team Members</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-person-add"></i>
+              </div>
+              <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+        <!-- ./col -->
+          <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+            <div class="small-box bg-red">
+              <div class="inner">
+                <h3>{{dashboardVm.report.monthlyAvg}}<sup style="font-size: 20px">per day</sup></h3>
+
+                <p>Monthly Average</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-pie-graph"></i>
+              </div>
+              <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+        <!-- ./col -->
+      </div>
+      <!-- /Dashboard complete-->  
+
+      <!-- /Donut Chart-->    
+      <div class="row">
+        
+        
+        <div class="col-md-6">
+            <div class="box box-danger">
+              <div class="box-header with-border">
+                <h3 class="box-title">WFH Chart</h3>
+
+                <div class="box-tools pull-right">
+                  <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                  </button>
+                  <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                </div>
+              </div>
+              <div class="box-body chart-responsive">
+                <div class="chart" id="Wfhchart" style="height: 300px; position: relative;"></div>
+              </div>
+            <!-- /.box-body -->
+          </div>
+        </div>  
+        <script type="text/javascript">
+           
+            Morris.Donut({
+              element: 'Wfhchart',
+              data: [
+                {label: "Atul", value: 12},
+                {label: "Tushar", value: 30},
+                {label: "Reshma", value: 20},
+                {label: "Sachin", value: 10},
+                {label: "Kumar", value: 15},
+              ]
+            });
+        </script>
+        
+      </div>
+    </div>
+</div>
